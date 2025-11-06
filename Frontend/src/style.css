@@ -1,0 +1,228 @@
+/* === General Reset === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background: #f3f2ef;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+/* === Navbar === */
+.navbar {
+  background: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  padding: 12px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #0077b5;
+  text-decoration: none;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.nav-user {
+  font-weight: 500;
+  text-decoration: none;
+  color: #333;
+}
+
+.btn {
+  background: #0077b5;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #005f8d;
+}
+
+.btn.outline {
+  background: transparent;
+  color: #0077b5;
+  border: 1px solid #0077b5;
+}
+
+.btn.outline:hover {
+  background: #0077b5;
+  color: white;
+}
+
+/* === Container === */
+.container {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* === Auth Forms === */
+.auth {
+  max-width: 420px;
+  margin: 60px auto;
+  padding: 30px 24px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.auth h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #0077b5;
+}
+
+.auth input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+.auth .btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* === Post Cards === */
+.card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+  padding: 16px 20px;
+  margin-bottom: 20px;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-header strong {
+  font-size: 1rem;
+  color: #222;
+}
+
+.post-header small {
+  color: #777;
+  font-size: 0.8rem;
+}
+
+.post p {
+  margin-top: 8px;
+  font-size: 0.95rem;
+}
+
+.post-img {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+  object-fit: cover;
+}
+
+/* === Post Actions === */
+.post-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+/* === Create Post === */
+textarea {
+  width: 100%;
+  padding: 10px;
+  min-height: 80px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: vertical;
+  font-size: 0.95rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+/* === Profile Page === */
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.profile h2 {
+  color: #0077b5;
+  text-align: center;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+  .nav-inner {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .container {
+    padding: 0 10px;
+  }
+
+  .auth {
+    margin: 40px 16px;
+    padding: 20px;
+  }
+
+  .post-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
