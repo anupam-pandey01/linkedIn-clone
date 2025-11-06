@@ -7,7 +7,7 @@ export default function Feed(){
   const [posts, setPosts] = useState([]);
 
   const fetch = async () => {
-    const res = await api.get('/posts');
+    const res = await api.get('/api/posts');
     setPosts(res.data);
   };
 

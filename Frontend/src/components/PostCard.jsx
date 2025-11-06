@@ -9,14 +9,14 @@ export default function PostCard({ post, onDeleted, onUpdated }) {
 
   const toggleLike = async () => {
     try {
-      const res = await api.post(`/posts/${post._id}/like`);
+      const res = await api.post(`api/posts/${post._id}/like`);
       setLikes(res.data.likes);
     } catch(e){ console.error(e); }
   };
 
   const save = async () => {
     try {
-      const res = await api.put(`/posts/${post._id}`, { text });
+      const res = await api.put(`api/posts/${post._id}`, { text });
       setEditing(false);
       onUpdated && onUpdated(res.data);
       window.location.reload(); 
@@ -26,7 +26,7 @@ export default function PostCard({ post, onDeleted, onUpdated }) {
   const remove = async () => {
     if (!confirm('Delete post?')) return;
     try {
-      await api.delete(`/posts/${post._id}`);
+      await api.delete(`api/posts/${post._id}`);
       onDeleted(post._id);
     } catch(e){ alert('Delete failed'); }
   };
@@ -49,7 +49,7 @@ export default function PostCard({ post, onDeleted, onUpdated }) {
       ) : (
         <>
           <p>{post.text}</p>
-          {post.image && <img src={ 'http://localhost:5000' + post.image} alt="post" className="post-img" />}
+          {post.image && <img src={ import.meta.env.VITE_API_URL + post.image} alt="post" className="post-img" />}
         </>
       )}
 

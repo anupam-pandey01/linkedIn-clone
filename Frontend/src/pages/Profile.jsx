@@ -11,7 +11,7 @@ export default function Profile(){
   useEffect(()=> {
     (async ()=>{
       try {
-        const uPosts = await api.get(`/posts/user/${id}`);
+        const uPosts = await api.get(`/api/posts/user/${id}`);
         setPosts(uPosts.data);
         // for name show from first post author or local storage if it's current user
         if (uPosts.data[0]) setUser(uPosts.data[0].author);

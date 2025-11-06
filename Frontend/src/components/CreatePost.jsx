@@ -11,7 +11,7 @@ export default function CreatePost({ onPosted }) {
       const form = new FormData();
       form.append('text', text);
       if (file) form.append('image', file);
-      const res = await api.post('/posts', form, { headers: { 'Content-Type': 'multipart/form-data' }});
+      const res = await api.post('/api/posts', form, { headers: { 'Content-Type': 'multipart/form-data' }});
       setText(''); setFile(null);
       onPosted(res.data);
     } catch (err) { alert(err.response?.data?.message || 'Failed'); }
